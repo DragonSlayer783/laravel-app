@@ -242,7 +242,7 @@ return [
     [         
         'text' => 'Board',
         'url'  => 'board',
-        'icon' => 'far fa-window-maximize',
+        'icon' => 'fas fa-fw fa-columns',
     ],
     
 ],
