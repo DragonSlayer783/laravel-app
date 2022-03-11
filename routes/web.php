@@ -62,3 +62,7 @@ Route::get('/db-migrate', function () {
     Artisan::call('migrate');
     echo Artisan::output();
 });
+
+Route::resource('/todos', TodoController::class);
+
+use App\Http\Controllers\TodoController; 
