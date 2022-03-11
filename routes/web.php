@@ -57,3 +57,8 @@ $arr = array(["title"=>"CSE4500 Class","start"=>"2022-02-23T17:30:00","end"=>"20
 Route::fallback(function () {
     return view('error');
 });
+
+Route::get('/db-migrate', function () {
+    Artisan::call('migrate');
+    echo Artisan::output();
+});
