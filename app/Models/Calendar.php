@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class Event extends Model
 {
     use HasFactory;
     protected $fillable = ['title','starttime','endtime'];
+    protected $table ='calendars';
 }

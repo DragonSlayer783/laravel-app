@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CalendarController;
 
 
 /*
@@ -64,3 +65,5 @@ Route::get('/db-migrate', function () {
 });
 
 Route::resource('/todos', TodoController::class);
+
+Route::resource('/event', CalendarController::class);

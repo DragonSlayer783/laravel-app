@@ -10,14 +10,14 @@ class CalendarController extends Controller
 
     public function index()
     {
-        $calanders = Calendar::all();
-        return view('calendars',compact('calendars'));
+        $events = Event::select('title', 'starttime AS start', 'endtime AS end')->get();
+        return json_encode( compact('events')['events'] );
     }
 
 
     public function create()
     {
-        return view('calendars.create');
+        return view('events.create');
     }
 
 
@@ -29,13 +29,13 @@ class CalendarController extends Controller
              'endtime' => 'required',
         ]);
 
-        $calendar = Calendar::create([ 
+        $calendar = Event::create([ 
              'title' => $request->title, 
-             'starttime' => $request->starttime,
-             'endtime' => $request->endtime, 
+             'starttime' => date($request->starttime),
+             'endtime' => date($request->endtime), 
         ]);
 
-        return $this->index();
+        return redirect('/calendar');
     }
 
     public function show($id)
