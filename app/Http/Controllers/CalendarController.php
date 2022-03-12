@@ -10,7 +10,7 @@ class CalendarController extends Controller
 
     public function index()
     {
-        $events = Event::select('title', 'starttime AS start', 'endtime AS end')->get();
+        $events = Calendar::select('title', 'starttime AS start', 'endtime AS end')->get();
         return json_encode( compact('events')['events'] );
     }
 
@@ -29,7 +29,7 @@ class CalendarController extends Controller
              'endtime' => 'required',
         ]);
 
-        $calendar = Event::create([ 
+        $calendar = Calendar::create([ 
              'title' => $request->title, 
              'starttime' => date($request->starttime),
              'endtime' => date($request->endtime), 
