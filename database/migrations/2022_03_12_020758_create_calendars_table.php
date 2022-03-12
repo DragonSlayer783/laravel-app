@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('calendars', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->dateTime('start time');
-            $table->dateTime('end time');
+            $table->dateTime('starttime');
+            $table->dateTime('endtime');
             $table->timestamps();
         });
     }
